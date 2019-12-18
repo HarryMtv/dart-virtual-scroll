@@ -1,0 +1,4 @@
+:host {
+    display: block;
+    /* This is equivalent of the 'body' selector of a page. */
+}
