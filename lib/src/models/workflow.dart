@@ -11,9 +11,9 @@ class Workflow {
   EventListener _onScrollHandler;
 
   Workflow(UiScrollComponent context) {
-    this._context = context;
-    this._scroller = Scroller(context);
-    this._onScrollHandler = (event) => runScroll(this._scroller, event);
-    this._scroller.viewport.scrollEventElement.addEventListener('scroll', print);
+    _context = context;
+    _scroller = Scroller(context);
+    _onScrollHandler = (event) => runScroll(_scroller, event);
+    _scroller.viewport.scrollEventElement.addEventListener('scroll', print);
   }
 }

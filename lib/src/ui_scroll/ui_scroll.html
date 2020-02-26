@@ -2,9 +2,10 @@
 
 <div
   *ngFor="let item of items"
+  #virtualItem
   [attr.data-sid]="item.nodeId"
-  [style.position]="item.invisible ? 'fixed' : null"
-  [style.left]="item.invisible ? '-99999px' : null">
+  [style.position]="!item.isVisible ? 'fixed' : null"
+  [style.left]="!item.isVisible ? '-99999px' : null">
 
   <template
     [ngTemplateOutlet]="template"
@@ -14,7 +15,6 @@
       odd: item.$index % 2,
       even: (item.$index % 2) == 0
     }">
-
   </template>
 </div>
 

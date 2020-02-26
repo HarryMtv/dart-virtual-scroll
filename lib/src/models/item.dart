@@ -10,24 +10,24 @@ class Item {
 
   HtmlElement element;
   num size;
-  bool invisible;
+  bool isVisible;
   bool isHorizontal;
 
   Item(final num index, final Object data, final bool isHorizontal) {
-    this.$index = index;
+    $index = index;
     this.data = data;
-    this.nodeId = index.toString();
-    this.invisible = true;
+    nodeId = index.toString();
+    isVisible = true;
     this.isHorizontal = isHorizontal;
   }
 
   void setSize() {
-    this.size = getElementSize(element, isHorizontal);
+    size = getElementSize(element, isHorizontal);
   }
 
   void hide() {
-    if (this.element != null) {
-      hideElement(this.element);
+    if (element != null) {
+      hideElement(element);
     }
   }
 }

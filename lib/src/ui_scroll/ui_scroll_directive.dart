@@ -20,7 +20,7 @@ class UiScrollDirective implements OnInit {
   @Input()
   @required
   set uiScrollOf(DataSource dataSource) {
-    this._dataSource = dataSource;
+    _dataSource = dataSource;
   }
 
   UiScrollDirective(
@@ -37,7 +37,8 @@ class UiScrollDirective implements OnInit {
     _componentRef.instance as UiScrollComponent
       ..template = _templateRef
       ..dataSource = _dataSource
-      ..scrollParent = querySelector('[ui-scroll-parent]');
+      ..scrollParent = querySelector('[ui-scroll-parent]')
+      ..scrollContainer = querySelector('[ui-scroll-container]');
 
     _componentRef.changeDetectorRef.markForCheck();
   }

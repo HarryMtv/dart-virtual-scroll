@@ -12,15 +12,15 @@ class Viewport {
   HtmlElement _scrollable;
 
   Viewport(HtmlElement element, Settings settings) {
-    this._settings = settings;
+    _settings = settings;
 
-    this._element = element;
-    this._host = element.parent;
-    this.scrollEventElement = this._host;
-    this._scrollable = element.parent;
+    _element = element;
+    _host = element.parent;
+    scrollEventElement = _host;
+    _scrollable = element.parent;
   }
 
   num getSize() => getElementSize(_host, _settings.isHorizontal);
 
-  num get scrollPosition => getScrollPosition(this._scrollable, _settings.isHorizontal);
+  num get scrollPosition => getScrollPosition(_scrollable, _settings.isHorizontal);
 }
